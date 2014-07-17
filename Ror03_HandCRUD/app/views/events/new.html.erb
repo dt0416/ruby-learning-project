@@ -1,0 +1,18 @@
+<%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>
+
+    <%= f.submit "Create" %>
+    
+    <!-- 資料錯誤顯示 -->
+    <% if @event.errors.any? %>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+<% end %>
