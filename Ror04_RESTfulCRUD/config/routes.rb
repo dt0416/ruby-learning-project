@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # 典型路由
-  match ':controller(/:action(/:id(.:format)))', via: [:get, :post, :patch]
+  resources :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
