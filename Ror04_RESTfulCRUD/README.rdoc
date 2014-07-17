@@ -1,0 +1,37 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+1. 以Ror03_HandCRUD為範本修改成RESTful的版本
+2. 加上XML、JSON、Atom的支援
+自動
+http://localhost:3000/events.xml
+http://localhost:3000/events.json
+http://localhost:3000/events.atom
+較手工
+http://localhost:3000/events/1.xml
+http://localhost:3000/events/1.json
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
