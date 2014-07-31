@@ -1,0 +1,48 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+1. 以Ror03_HandCRUD為範本修改成RESTful與表單應用版本
+http://localhost:3000/events
+	一對多 Resources
+		案例一: 設計一個 event has_many :attendees
+		(有bug)案例二: 讓 event 可以用 select 單選一個 category
+	一對一 Resource
+		案例一：建立Location表單
+		(部分未成功)案例二：用 Nested Model 順帶編輯跟新增
+	多對多 Resources
+		案例一： 在 event new/edit 中, 可以使用 checkbox 多選 group
+	操作 Resources 狀態
+		(範例有問題)案例：設計一個 event_states resource, 可以開關 event 狀態
+	客製 Resources (collection)
+		案例：可以依據關鍵字搜尋 event
+	客製 Resources (member)
+		(dashboard暫時和show一樣)案例：新增 event dashboard 頁面
+	排序 Resources
+		案例：讓 event index 可以依照參數排序
+	Namespace Resources
+		(範例只有一半，缺少view)案例：新增 event 的管理後台
+	
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

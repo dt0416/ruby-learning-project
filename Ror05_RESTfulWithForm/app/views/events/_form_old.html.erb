@@ -1,0 +1,25 @@
+<%#= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+<%#= f.select :category_id, category_options  %>
+
+<%= f.label :name, "Name" %>
+<%= f.text_field :name %>
+
+<%= f.label :description, "Description" %>
+<%= f.text_area :description %>
+
+<%= f.fields_for :location do |location_form| %>
+<p>
+<%= location_form.label :name, "Location Name" %>
+<%= location_form.text_field :name %>
+
+<% unless location_form.object.new_record? %>
+    <%= location_form.label :_destroy, 'Remove:' %>
+    <%= location_form.check_box :_destroy %>
+<% end %>
+</p>
+<% end %>
+
+<% @groups.each do |g| %>
+  <%= check_box_tag "event[group_ids][]", g.id, @event.groups.map(&:id).include?(g.id) %> <%= g.name %>
+<% end %>
+<%= hidden_field_tag 'event[group_ids][]','' %>

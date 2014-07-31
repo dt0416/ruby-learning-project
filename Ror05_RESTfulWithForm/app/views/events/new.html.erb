@@ -1,0 +1,14 @@
+<%= form_for setup_event(@event), :url => events_path do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <%= f.submit "Create" %>
+    
+    <!-- 資料錯誤顯示 -->
+    <% if @event.errors.any? %>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+<% end %>

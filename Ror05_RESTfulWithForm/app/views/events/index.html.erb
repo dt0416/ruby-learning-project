@@ -1,0 +1,21 @@
+<%= link_to 'Sort by Name', events_path( :order => "name") %>
+<%= link_to 'Sort by Default', events_path %>
+<%= paginate @events %>
+<% @events.each do |event| %>
+  <li>
+    <%= link_to event.name, event_path(event) %>
+    <%= link_to 'edit', edit_event_path(event) %>
+    <%= link_to 'attendees', event_attendees_path(event) %><!-- 一對多 -->
+    <%= link_to 'location', event_location_path(event) %><!-- 一對一 -->
+    <%= link_to 'Dashboard', dashboard_event_path(event) %>
+    <%= button_to 'delete', event_path(event), :method => :delete %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'new event', new_event_path %>
+
+<%= form_tag search_events_path, :method => :get do %>
+    <%= text_field_tag "keyword" %>
+	<%= submit_tag "Search" %>
+<% end %>
